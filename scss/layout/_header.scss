@@ -1,3 +1,258 @@
-//============
-// Header
-//============
+.fh5co-cover {
+	height: 800px;
+	position: relative;
+  width: 100%;
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+  overflow: hidden;
+	.overlay {
+		z-index: 0;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: rgba($inverse-base-color,.4);
+	}
+	@media screen and (max-width: $screen-sm) {
+		height: 600px;
+	}
+	.display-t,
+	.display-tc {
+		z-index: 9;
+		height: 700px;
+		display: table;
+		width: 100%;
+		margin-top: 100px;
+		@media screen and (max-width: $screen-sm) {
+			height: 600px;
+		}
+  }	
+  
+  //
+  // Variant sizes 
+  //
+
+	&.fh5co-cover__small {
+		height: 600px;
+		@media screen and (max-width: $screen-sm) {
+			height: 400px;
+		}
+		.display-t,
+		.display-tc {
+			height: 600px;
+			display: table;
+			width: 100%;
+			@media screen and (max-width: $screen-sm) {
+				height: 400px;
+			}
+		}	
+	}
+  
+  &.fh5co-cover__mini {
+		height: 300px;
+    .header-content__heading {
+      top: 140px;
+    }
+		@media screen and (max-width: $screen-sm) {
+			height: 300px;
+		}
+  }
+}
+
+//
+// Header section 
+//
+
+// 
+// Header hero image and text settings 
+.hero-header {
+  overflow: hidden;
+  background-color: #f7f7f7;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+          background-size: cover;
+       -o-background-size: cover;
+         
+  .header-content {
+    @extend %clearfix;
+    position: relative;
+    top: 10%;
+    margin-bottom: 60px;
+    h1 {
+      font-size: 50px;
+      line-height: 1.2em;
+    }
+    .subheading {
+      font-size: 38px;  
+    }
+    .meta {
+      font-size: 18px;
+      font-style: italic;
+    }
+    .header-content__heading {
+      position: relative;
+      top: 30%;
+      max-width: 992px;
+      margin-left: auto;
+      margin-right: auto;
+      
+      .header-content__heading--category-list {
+        li {
+          list-style: none;
+          display: inline-block;
+          a {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            &:hover {
+              color: inherit;
+            }
+          }
+          &::after {
+            content: "/";
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          &:last-child {
+            &::after {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+    .header-content__author-content {
+      position: relative;
+      bottom: 0;
+      // transform: translateY(-60%);
+
+      img {
+        width: 70px;
+        height: auto;
+        border-radius: 50%;
+        &.avatar {
+          color: inherit;
+        }      
+      }
+      p {
+        font-size: 16px;
+        font-style: italic;
+        margin: 0 auto;
+        a {
+          color: inherit;
+          font-weight: bold;  
+        }
+        span {
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+        time {
+          font-size: 16px;        
+        }
+      }
+    }
+
+    //
+    // Mobile styles 
+    @media (max-width: ($screen-sm - 1px)) {
+      h1 {
+        font-size: 30px;
+      }
+      .meta {
+        font-size: 14px;
+      }
+      .header-content__author-content {
+        img {
+          width: 50px;
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 14px;
+          span, time {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    //
+    // Utility classes helpers 
+    &.text-white {
+      .header-content__heading--category-list a {
+        color: #FFF;
+      }
+    }
+  }
+}
+
+// 
+// Add overlay to header 
+.hero-header {
+  &.overlay {
+    position: relative;
+    &:after {
+      position: absolute;
+      content:"";
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      opacity: .5;
+      background: rgba(48,56,65,.35);
+    }
+    
+    &:after  {
+      opacity: .5;
+    }
+  }
+  
+  &.red:after {
+    background-color: red;
+  }
+
+  .navbar,
+  .header-content__heading,
+  .header-content__author-content {
+    z-index: 2;
+  }
+}
+
+.hero-header {
+  background-color: #777;  
+  .site-heading, 
+  .post-heading, 
+  .page-heading {
+    padding: 100px 0 50px;
+    color: white;
+    text-align: center;
+  
+    h1 {
+      margin-top: 0;
+      font-size: 50px;
+    }
+    .subheading {
+      font-size: 24px;
+      line-height: 1.1;
+      display: block;
+      font-weight: 300;
+      margin: 10px 0 0;
+    }
+  }
+
+  &.parallax-window { // Bugfix for parallax effect.
+    background-color: transparent;
+  }
+    
+  @media only screen and (min-width: $screen-sm) {
+    .site-heading, 
+    .post-heading, 
+    .page-heading {
+      padding: 150px 0;
+    }
+  } // end media query
+}

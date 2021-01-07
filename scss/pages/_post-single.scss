@@ -1,0 +1,112 @@
+//------------------------------------------------------------------------
+// Blog single post 
+//------------------------------------------------------------------------
+
+.blog-entry {
+  //
+  // Article body categories 
+  //
+
+  .blog-entry-categories { 
+    .blog-entry-categories__wrapper {
+      @extend .container;
+      padding-bottom: 10px;
+      h2 {
+        font-size: 18px;
+        // font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .blog-entry-categories__list {
+        color: #FFF;
+        font-size: 14px;
+        list-style: none;
+        padding: 0;
+        li {
+          display: inline-block;
+          &:last-child {
+            &::after {
+              content: "";
+            }
+          }
+          &::after {
+            content: "/";
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          a {
+            color: inherit;
+          }
+        }
+      }
+      hr {
+        border-color: #d7d7d7;
+      }
+    }
+  }
+
+  .blog-entry-content {
+    .blog-entry-content__wrapper {
+      @extend .container;
+      color: #58595B;
+      font-size: 16px;
+      p {
+        color: #58595B;
+        font-size: 16px;
+      }
+      // blockquote {
+        // border-color: #1783C6;
+        // color: #333333;
+      // }
+      @media (min-width: 680px) {
+        font-size: 20px;
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+    .blog-entry-content__share-widget {
+      display: inline-block;
+      // top: 50%;
+      margin-left: -100px;
+      line-height: 32px;
+      z-index: 2;
+      
+      &.position-absolute {
+        position: absolute;
+        top: 10px; 
+      }
+      &.position-fixed {
+        position: fixed;
+        top: 150px; 
+        @include transform(translateY(-50%));
+      }
+      
+      .social-01__navSocial {
+        > .social-01__item {
+          display: block;
+          text-align: center;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          border-radius: 50%;
+          padding: 0;
+          margin: 0 10px 10px;
+          background-color: #FFF;
+          border: 1px solid #1A1A1A;
+          i {
+            color: #1A1A1A;
+          }
+          &:hover {
+            color: white;
+            // background-color: $brand-primary;
+            border-color: $brand-primary;
+            i {
+              color: $brand-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
