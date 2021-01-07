@@ -1,13 +1,13 @@
 {
   "name": "@pagestudiocms/create-scss",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "description": "A quick and easy way to add a scss directory structure to your projet. Use this package to get a scss directory structure, tools and commands for developement",
   "main": "index.js",
   "dependencies": {
     "fs-extra": "^9.0.0"
   },
   "scripts": {
-    "postinstall": "node postinstall.js",
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
