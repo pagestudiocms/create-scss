@@ -6,7 +6,7 @@ const fs = require("fs-extra");
 // Async/Await:
 async function copyFiles() {
   try {
-    await fs.copy("scss", "../../scss", { overwrite: false, errorOnExist: true });
+    await fs.copy("scss", "../../scss", { overwrite: true, errorOnExist: true });
     console.log(
       "\x1b[32m",
       "Awesome! A new scss folder was added to your project. You are now ready to code something beautiful"
