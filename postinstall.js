@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 async function copyFiles() {
   try {
     await fs.copy('scss', '../../../src/scss/vendors/pagestudio-scss-framework', {
-      overwrite: false,
+      overwrite: true,
       errorOnExist: true,
     });
     console.log(
