@@ -1,25 +1,13 @@
-.btn {
-  // &[class*="btn-"] {
-    // font-size: 11px; 
-    // text-transform: uppercase;
-    // letter-spacing: .11em;
-    // // padding: 8px 12px;
-  // }
-  // &[class*="btn-xs"] {
-    // font-size: 10px;
-    // padding: 4px 8px;
-  // }
-  // Bootstrap4 style focus 
-  // &:focus {
-    // box-shadow: 0 0 0 .2rem rgba(108,117,125,.5);
-  // }
-}
-
 // ---------------------------------------------------------------
 // Outlined buttons 
 // ---------------------------------------------------------------
 
 // Remove all backgrounds
+
+.btn-outline-default {
+  @include button-outline-variant($btn-default-bg);
+}
+
 .btn-outline-primary {
   @include button-outline-variant($btn-primary-bg);
 }

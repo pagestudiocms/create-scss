@@ -65,6 +65,13 @@ $font-weight-light:        200 !default;
 $font-weight-normal:       300 !default;
 $font-weight-bold:         600 !default;
 
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-default-color:              #555;
+$btn-default-bg:                 #FFF;
+$btn-default-border:             darken($btn-default-bg, 6%);
 
 //== Navbar
 //
